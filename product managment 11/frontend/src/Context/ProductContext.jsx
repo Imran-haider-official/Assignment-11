@@ -13,7 +13,7 @@ export const ProductProvider = ({ children }) => {
     const fetchProducts = async () => {
         try {
 
-            const data = await axios.get("http://localhost:3000/products/")
+            const data = await axios.get("https://assignment-11-backend-xi.vercel.app/products/")
             // const data = await response.json();
             console.log(data.data)
 
@@ -37,7 +37,7 @@ export const ProductProvider = ({ children }) => {
     const deleteProduct = async (id) => {
         if (window.confirm("Are you sure you want to delete this product?")) {
 
-            await axios.delete(`http://localhost:3000/products/${id}`)
+            await axios.delete(`https://assignment-11-backend-xi.vercel.app/${id}`)
             fetchProducts();
 
 
@@ -46,12 +46,12 @@ export const ProductProvider = ({ children }) => {
     };
 
     const addProduct = async (newProduct) => {
-       await axios.post("http://localhost:3000/products/",newProduct)
+       await axios.post("https://assignment-11-backend-xi.vercel.app/products/",newProduct)
         fetchProducts()
     };
 
     const updateProduct = (id, updatedData) => {
-        axios.put(`http://localhost:3000/products/${id}`,updatedData)
+        axios.put(`https://assignment-11-backend-xi.vercel.app/${id}`,updatedData)
          fetchProducts()
     };
 
