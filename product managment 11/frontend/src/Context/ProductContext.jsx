@@ -37,7 +37,7 @@ export const ProductProvider = ({ children }) => {
     const deleteProduct = async (id) => {
         if (window.confirm("Are you sure you want to delete this product?")) {
 
-            await axios.delete(`https://assignment-10-production.up.railway.app/${id}`)
+            await axios.delete(`https://assignment-10-production.up.railway.app/products/${id}`)
             fetchProducts();
 
 
@@ -46,12 +46,12 @@ export const ProductProvider = ({ children }) => {
     };
 
     const addProduct = async (newProduct) => {
-       await axios.post("https://assignment-10-production.up.railway.app/",newProduct)
+       await axios.post("https://assignment-10-production.up.railway.app/products/",newProduct)
         fetchProducts()
     };
 
     const updateProduct = (id, updatedData) => {
-        axios.put(`https://assignment-10-production.up.railway.app/${id}`,updatedData)
+        axios.put(`https://assignment-10-production.up.railway.app/products/${id}`,updatedData)
          fetchProducts()
     };
 
