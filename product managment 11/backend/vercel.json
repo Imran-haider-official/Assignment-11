@@ -1,7 +1,7 @@
 {
-  "rewrites": [{ "source": "/api/(.*)", "destination": "/api/main.js" }],
+  "rewrites": [{ "source": "/(.*)", "destination": "main.js" }],
   "functions": {
-    "api/main.js": {
+    "main.js": {
       "runtime": "vercel-node@latest"
     }
   }
