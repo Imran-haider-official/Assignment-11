@@ -12,6 +12,11 @@ ConnectDB();
 // Corrected line: invoke the function
 app.use('/products', ProductRoutes)
 app.use('/user', userRoutes)
-app.listen(Port, () => {
-    console.log(`Server is running on Port ${Port}`);
-})
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(Port, () => {
+        console.log(`Server is running on Port ${Port}`);
+    });
+}
+
+
+export default app
